@@ -86,6 +86,48 @@ class SinglyLinkedList {
 
         return deletedNode;
     }
+
+    /* extra operations */
+    traverse() {
+        var currentNode = this.head,
+            result = [];
+
+        while(currentNode) {
+            result.push(currentNode.data);
+            currentNode = currentNode.next;
+        }
+
+        return result;
+    }
+
+    reverse(head) {
+        var prev = null,
+            next = null,
+            currentNode = head || this.head;
+
+        while (currentNode) {
+            next = currentNode.next;
+            currentNode.next = prev;
+            prev = currentNode;
+            currentNode = next;
+        }
+
+        return prev;
+    }
+
+    findMiddlePoint() {
+        var fastPointer = this.head,
+            slowPointer = this.head,
+            currentNode = this.head;
+
+        /* when fastPointer will reach at the end, slowPointer will reach at mid point that time */
+        while (fastPointer && fastPointer.next) {
+            fastPointer = fastPointer.next.next;
+            slowPointer = slowPointer.next;
+        }
+
+        return slowPointer.data;
+    }
 }
 
 
@@ -101,3 +143,21 @@ console.log(list1.findNodeAt(1));
 
 list1.remove(2);
 console.log(list1);
+
+console.log('-----------------------');
+/* extra operations */
+var list2 = new SinglyLinkedList();
+list2.add(1);
+list2.add(2);
+list2.add(3);
+
+console.log('List:', list2);
+
+console.log('Traverse the list:');
+console.log(list2.traverse());
+
+console.log('Middle element of the list:');
+console.log(list2.findMiddlePoint());
+
+console.log('Reverse the list:');
+console.log(list2.reverse());
