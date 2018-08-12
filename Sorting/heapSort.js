@@ -62,7 +62,7 @@ function heapSort(arr) {
 
 
 /*  Init  */
-var arr = [22, 30, 10, 7, 29, 23];
+let arr = [22, 30, 10, 7, 29, 23];
 
 console.log('Source: ', arr);
 
