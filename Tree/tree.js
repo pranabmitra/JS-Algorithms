@@ -28,7 +28,7 @@ console.log(" 1   6       8");
 /***************************************/
 
 function createTree() {
-    var two,
+    let two,
         seven,
         five,
         one,
@@ -104,7 +104,7 @@ function postOrder(node) {
 
 
 /***** Output *****/
-var root = createTree(),
+let root = createTree(),
     preOrderResult = [],
     inOrderResult = [],
     postOrderResult = [];
