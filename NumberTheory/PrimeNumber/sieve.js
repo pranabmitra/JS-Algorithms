@@ -2,12 +2,12 @@ console.log('----- All primes up to a specified number -----');
 
 /* Sieve method :: return a list of prime numbers up to a specified number */
 function sieveOfEratosthenes(n) {
-    var prime = Array(n).fill(true),
+    let prime = Array(n).fill(true),
         i,
         j,
         result = [];
 
-    for (i = 2; i <= 50; i++) {
+    for (i = 2; i <= n; i++) {
         if (prime[i]) {
             result.push(i);
 
@@ -20,12 +20,12 @@ function sieveOfEratosthenes(n) {
     return result;
 }
 
-var listOfPrimeNumbers = sieveOfEratosthenes(50);
+const listOfPrimeNumbers = sieveOfEratosthenes(50);
 console.log('All prime numbers up to 50');
 console.log(listOfPrimeNumbers);
 
 /* isPrime check from the list */
-var isPrime1 = listOfPrimeNumbers.indexOf(27), // false
+const isPrime1 = listOfPrimeNumbers.indexOf(27), // false
     isPrime2 = listOfPrimeNumbers.indexOf(29); // true
 
 console.log('27 is a prime number:', isPrime1 >= 0, '\n29 is a prime number:', isPrime2 >= 0);
