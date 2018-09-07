@@ -23,11 +23,10 @@ console.log('Using Recursion:', fib(9));
 
 
 // using memorization
-console.log('------------ Using Memorization -----------');
+console.log('------------ Using Memoization -----------');
 
-function fibUsingMemorization(n) {
-    var i,
-        allFibs = [];
+function fibUsingMemoization(n) {
+    var i;
 
     for (i = 0; i < n; i++) {
         if (i < 2) {
@@ -41,7 +40,8 @@ function fibUsingMemorization(n) {
 }
 
 /* output */
-console.log(fibUsingMemorization(9));
+const allFibs = [];
+console.log(fibUsingMemoization(9));
 
 
 
