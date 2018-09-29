@@ -1,5 +1,5 @@
 /* Circular_Buffer / Circular_Queue / Cyclic_Buffer / Ring_Buffer */
-class Circular {
+class CircularBuffer {
     constructor(size) {
         this.size = size;
         this.memory = new Array(size);
@@ -63,7 +63,8 @@ class Circular {
 
 
 /* Init */
-circular = new Circular(7);
+let bufferSize = 7;
+circular = new CircularBuffer(bufferSize);
 circular.enqueue(2);
 circular.display();
 circular.enqueue(34);
